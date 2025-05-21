@@ -1,0 +1,34 @@
+# 环境变量配置
+.env
+
+# 日志目录
+logs/
+*.log
+
+# 临时文件目录
+temp/
+
+# 断点续传目录
+checkpoint/
+
+# 编译后的二进制文件
+uploader
+
+# 依赖项和构建缓存
+vendor/
+
+# IDE 和编辑器文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# Cursor 配置
+.cursor/
+node_modules/
+package-lock.json
+dist/

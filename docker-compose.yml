@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  uploader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: go-uploader
+    ports:
+      - "5050:5050"
+    volumes:
+      - uploader_logs:/app/logs
+      - uploader_temp:/app/temp
+      - uploader_checkpoint:/app/checkpoint
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5050/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+# 定义Docker命名卷
+volumes:
+  uploader_logs:
+  uploader_temp:
+  uploader_checkpoint:

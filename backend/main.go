@@ -216,7 +216,7 @@ func main() {
 	logger.Printf("设置最大上传文件大小为: %d MB", (r.MaxMultipartMemory / 1024 / 1024))
 
 	// 设置静态文件服务
-	r.StaticFile("/", "./test-webcomponents.html")
+	r.StaticFile("/", "./index.html")
 	logger.Printf("静态文件路由设置完成")
 
 	// WebSocket处理上传进度
